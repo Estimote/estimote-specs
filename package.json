@@ -7,5 +7,6 @@
   },
   "devDependencies": {},
   "author": "Estimote <contact@estimote.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "Estimote/estimote-specs"
 }
