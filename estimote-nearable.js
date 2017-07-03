@@ -95,7 +95,7 @@ function parseEstimoteNearablePacket(data) { // data is a 0-indexed byte array/b
   };
 }
 
-// example how to scan & parse Estimote Telemetry packets with noble
+// example how to scan & parse Estimote Nearable packets with noble
 
 var noble = require('noble');
 
