@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Documentation and example code describing how to parse Estimote packets",
   "dependencies": {
-    "noble": "^1.6.0"
+    "noble": "^1.8.1"
   },
   "devDependencies": {},
   "author": "Estimote <contact@estimote.com>",
