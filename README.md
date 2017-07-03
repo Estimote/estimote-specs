@@ -1,6 +1,6 @@
 # Estimote packet specs
 
-We believe in runnable code more than we do in PDF specs, so we bring our specs to you in form of example Node.js scripts that demonstrate how to do all the parsing. Combined with rich in-line documentation, this should allow you to write your own parsers (in technology of your own choice, and for platforms you want to use) in no time. Or, just port our code! :wink:
+We believe in **runnable code** more than we do in PDF specs, so we bring our specs to you in form of example Node.js scripts that demonstrate **how to do all the parsing**. Combined with rich in-line documentation, this should allow you to write your own parsers (in technology of your own choice, and for platforms you want to use) in no time. Or, just port our code! :wink:
 
 Simply read the `*.js` files to learn how the Estimote packets are constructed and how to parse them.
 
@@ -8,7 +8,7 @@ But, the best part is, you can also run them!
 
 You'll need to:
 
-- install Node.js (e.g., from here: https://nodejs.org/en/, or on macOS, you could use [homebrew][h] and `brew install node`)
+- install Node.js https://nodejs.org/en/, or on macOS, you could use [homebrew][h] and `brew install node`)
 - meet the ["noble" prerequisites][n] ("noble" is a Node.js library that we use here to do the BLE scanning)
 - clone this repo and run `npm install` in this directory—this will install noble
 - run `node estimote-telemetry.js` (or other)
