@@ -36,7 +36,7 @@ function parseEstimoteNearablePacket(data) { // data is a 0-indexed byte array/b
   var temperature = temperatureRawValue / 16.0;
 
   // byte 15, 7th bit = is the nearable moving or not
-  var isMoving = (data.readUInt8(15) & 0b01000000) == 1;
+  var isMoving = (data.readUInt8(15) & 0b01000000) != 0;
 
   // ***** ACCELERATION
   // byte 16 => acceleration RAW_VALUE on the X axis
