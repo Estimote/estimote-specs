@@ -22,4 +22,4 @@ The example code for parsing the Estimote packets is available under the MIT lic
 > OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 > SOFTWARE.
 
-The advertising protocols themselves are intelectual property of Estimote, "all rights reserved." Or in other words, it's not okay to use (advertise) them with non-Estimote devices/beacons, unless you ask and we agree to that.
+The advertising protocols themselves are intelectual property of Estimote, "all rights reserved." For example, it's not okay to use (advertise) them with non-Estimote devices/beacons, unless you ask and we agree to that.
