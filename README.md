@@ -8,13 +8,14 @@ But, the best part is, you can also run them!
 
 You'll need to:
 
-- install Node.js https://nodejs.org/en/, or on macOS, you could use [homebrew][h] and `brew install node`)
-- meet the ["noble" prerequisites][n] ("noble" is a Node.js library that we use here to do the BLE scanning)
+- install [Node.js][njs]; on macOS, you can use [homebrew][hom] and `brew install node`
+- meet the ["noble" prerequisites][nob] ("noble" is a Node.js library that we use here to do the BLE scanning)
 - clone this repo and run `npm install` in this directory—this will install noble
 - run `node estimote-telemetry.js` (or other)
 
-[h]: http://brew.sh/
-[n]: https://github.com/sandeepmistry/noble#prerequisites
+[njs]: https://nodejs.org/en/
+[hom]: http://brew.sh/
+[nob]: https://github.com/sandeepmistry/noble#prerequisites
 
 Naturally, you'll also need some Estimote hardware broadcasting the actual packets. :satellite:
 
