@@ -25,6 +25,9 @@ function parseEstimoteNearablePacket(data) { // data is a 0-indexed byte array/b
   // bytes 3–10 (8 bytes total)
   var nearableId = data.toString('hex', 3, 11);
 
+  // byte 11 = hardware version
+  // byte 12 = firmware version
+
   // ***** TEMPERATURE
   // byte 13 and the first 4 bits of byte 14 is the temperature in signed,
   // fixed-point format, with 4 decimal places
@@ -37,6 +40,21 @@ function parseEstimoteNearablePacket(data) { // data is a 0-indexed byte array/b
 
   // byte 15, 7th bit = is the nearable moving or not
   var isMoving = (data.readUInt8(15) & 0b01000000) != 0;
+
+  // ***** BATTERY VOLTAGE
+  // byte 15, 8th bit = voltage measurement type
+  // we measure voltage under stress (i.e., sticker is broadcasting) and when
+  // idle, to better understand the state of the battery
+  // the results are reported interchangably, i.e., one packet will come with
+  // the 'stress' measurement, another with 'idle', and so on and so forth
+  var voltageType = (data.readUInt8(15) & 0b10000000) != 0 ? 'stress' : 'idle';
+
+  // voltage RAW_VALUE = byte 14, 4 upper bits + byte 15, 6 lower bits
+  // RAW_VALUE is a 10-bit unsigned integer
+  // (3 * 1.2 * RAW_VALUE) / 1023) = actual voltage
+  var voltageRawValue = ((data.readUInt8(14) & 0b11110000) >> 4)
+                      | ((data.readUInt8(15) & 0b00111111) << 4);
+  var voltage = (3 * 1.2 * voltageRawValue) / 1023;
 
   // ***** ACCELERATION
   // byte 16 => acceleration RAW_VALUE on the X axis
@@ -91,7 +109,8 @@ function parseEstimoteNearablePacket(data) { // data is a 0-indexed byte array/b
   return {
     nearableId,
     temperature,
-    isMoving, motionStateDuration, acceleration
+    isMoving, motionStateDuration, acceleration,
+    voltageType, voltage
   };
 }
 
