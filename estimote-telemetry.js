@@ -155,12 +155,12 @@ function parseEstimoteTelemetryPacket(data) { // data is a 0-indexed byte array/
     // byte 11 => normalized magnetic field RAW_VALUE on the Y axis
     // byte 12 => normalized magnetic field RAW_VALUE on the Z axis
     // RAW_VALUE is a signed (two's complement) 8-bit integer
-    // RAW_VALUE * 2 / 128.0 = normalized value, between -1 and 1
+    // RAW_VALUE / 128.0 = normalized value, between -1 and 1
     // the value will be 0 if the sensor hasn't been calibrated yet
     var magneticField = {
-      x: data.readInt8(10) * 2 / 128.0,
-      y: data.readInt8(11) * 2 / 128.0,
-      z: data.readInt8(12) * 2 / 128.0
+      x: data.readInt8(10) / 128.0,
+      y: data.readInt8(11) / 128.0,
+      z: data.readInt8(12) / 128.0
     };
 
     // ***** AMBIENT LIGHT
