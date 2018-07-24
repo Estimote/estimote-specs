@@ -265,9 +265,11 @@ noble.on('stateChange', function(state) {
 });
 
 noble.on('discover', function(peripheral) {
-  var data = peripheral.advertisement.serviceData.find(function(el) {
+  var serviceData = peripheral.advertisement.serviceData.find(function(el) {
     return el.uuid == ESTIMOTE_SERVICE_UUID;
-  }).data;
+  });
+  if (serviceData === undefined) { return; }
+  var data = serviceData.data;
 
   var telemetryPacket = parseEstimoteTelemetryPacket(data);
   if (telemetryPacket) { console.log(telemetryPacket); }
