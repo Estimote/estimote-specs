@@ -199,7 +199,7 @@ function parseEstimoteTelemetryPacket(data) { // data is a 0-indexed byte array/
        (data.readUInt8(16)               <<  2) |
       ((data.readUInt8(15) & 0b11000000) >>  6);
     if (temperatureRawValue > 2047) {
-      // JavaScript way to convert an unsigned integer to a signed one (:
+      // a simple way to convert a 12-bit unsigned integer to a signed one (:
       temperatureRawValue = temperatureRawValue - 4096;
     }
     temperature = temperatureRawValue / 16.0;
