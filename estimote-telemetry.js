@@ -131,8 +131,8 @@ function parseEstimoteTelemetryPacket(data) { // data is a 0-indexed byte array/
       // bytes 16, 17, 18, 19 => atmospheric pressure RAW_VALUE
       // RAW_VALUE is an unsigned 32-bit integer, little-endian encoding,
       //   i.e., least-significant byte comes first
-      //   e.g., if bytes are 16th = 0x12, 17th = 0x34, 18th = 0x56, 19th = 0x78
-      //         then the value is 0x78563412
+      //   e.g., if bytes are 16th = 0xFC, 17th = 0x98, 18th = 0x88, 19th = 0x01
+      //         then the value is 0x018898FC = 25729276
       // RAW_VALUE / 256.0 = atmospheric pressure in pascals (Pa)
       // note that unlike what you see on the weather forecast, this value is
       // not normalized to the sea level!
