@@ -64,8 +64,8 @@ function parseEstimoteTelemetryPacket(data) { // data is a 0-indexed byte array/
     //     - 0b00 ("0") => seconds
     //     - 0b01 ("1") => minutes
     //     - 0b10 ("2") => hours
-    //     - 0b11 ("3") => days if NUMBER is < 32
-    //                     if it's >= 32, then it's "NUMBER - 32" weeks
+    //     - 0b11 ("3") => days if NUMBER is <= 32
+    //                     if it's > 32, then it's "NUMBER - 32" weeks
     var parseMotionStateDuration = function(byte) {
       var number = byte & 0b00111111;
       var unitCode = (byte & 0b11000000) >> 6;
@@ -76,7 +76,7 @@ function parseEstimoteTelemetryPacket(data) { // data is a 0-indexed byte array/
         unit = 'minutes';
       } else if (unitCode == 2) {
         unit = 'hours';
-      } else if (unitCode == 3 && number < 32) {
+      } else if (unitCode == 3 && number <= 32) {
         unit = 'days';
       } else {
         unit = 'weeks';
