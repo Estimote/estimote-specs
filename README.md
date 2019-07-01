@@ -23,7 +23,7 @@ Naturally, you'll also need some Estimote hardware broadcasting the actual packe
 
 ### List of Estimote packets
 
-- **Estimote Telemetry**, used to transmit sensor and health data from the beacons. Available in Location Beacons (hardware revision "F") and next-gen Proximity Beacons (hardware revision "G").
+- **Estimote Telemetry**, used to transmit sensor and health data from the beacons. Available in most Estimote Proximity and Location Beacons. Notable exception: Proximity Beacons from 2013, with hardware revision D3.x.
 
 - **Estimote Nearable**, a packet used to identify nearby objects ("nearables"). Estimote Stickers broadcast this packet. You can stick a Sticker onto any regular object, transforming it into a "nearable" that apps can detect.
 
