@@ -247,7 +247,7 @@ function parseEstimoteTelemetryPacket(data) { // data is a 0-indexed byte array/
 
 // example how to scan & parse Estimote Telemetry packets with noble
 
-var noble = require('noble');
+var noble = process.platform === 'darwin' ? require('noble-mac') : require('noble');
 
 noble.on('stateChange', function(state) {
   console.log('state has changed', state);

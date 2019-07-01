@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Documentation and example code describing how to parse Estimote packets",
   "dependencies": {
-    "noble": "^1.9.1"
+    "noble": "^1.9.1",
+    "noble-mac": "git://github.com/Timeular/noble-mac.git"
   },
   "devDependencies": {},
   "author": "Estimote <contact@estimote.com>",

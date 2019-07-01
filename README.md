@@ -10,7 +10,6 @@ You'll need to:
 
 - install [Node.js][njs]; on macOS, you can use [homebrew][hom] and `brew install node`
 - meet the ["noble" prerequisites][nob] ("noble" is a Node.js library that we use here to do the BLE scanning)
-  - **note:** noble currently doesn't support macOS High Sierra; you can try [this 3rd party branch][noble-hs] instead
 - clone this repo and run `npm install` in this directory—this will install noble
 - run `node estimote-telemetry.js` (or other)
 
